@@ -1,0 +1,23 @@
+Project by Klaudia Rychter, created as a part of engineering thesis - "Change facial expressions based on emotions using GAN networks".
+Purpose of this application is to test trained CycleGAN models on any given picture depicting human face.
+It is recommended that tested image is in a square format, otherwise it's resizing may cause significant deformation.
+
+To change facial expression of a person, it is necessary to pick a photo by clicking "Load picture".
+"Load picture" button opens a file explorer. First opened folder 'samples' includes a few pictures from fer2013 dataset, labeled as PublicTest images.
+After choosing a picture it is displayed in an application's window.
+By clicking any of the buttons named after emotions, there is a new picture being generated, with facial expression changed accordingly.
+Generating a new picture may take a moment. After it's created it's displayed on the right side of the original picture.
+
+Included in /models/neutral_[emotion_name] folders CycleGAN models were trained with CycleGAN Keras implementation by Simon Karlsson,
+on fer2013 dataset.
+CycleGAN Keras implementation page: https://github.com/simontomaskarlsson/CycleGAN-Keras
+fer2013 dataset: https://www.kaggle.com/c/challenges-in-representation-learning-facial-expression-recognition-challenge/data
+
+To use this application on different models or with different model weights switch existing files model.json and weights.hdf5
+in /models/neutral_[emotion_name]. Names of the files should remain the same.
+Folders may include files with different weights under name weights_tmp*.hdf5. It is possible to test them by renaming them to weights.hdf5
+(make sure to rename previous weights.hdf5 file before)
+
+Last transformed file and it's modified version is saved in /tmp folder as greyscale.jpg (for input file, resized and turned into grayscale)
+and modified.png (for modified file).
+
